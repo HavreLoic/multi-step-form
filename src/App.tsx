@@ -1,9 +1,9 @@
-import { PersonalInfoCard } from "./UI"
+import { PlanSelection } from "./UI"
 function App() {
 
   return (
     <>
-      <PersonalInfoCard />
+      <PlanSelection />
     </>
   )
 }
