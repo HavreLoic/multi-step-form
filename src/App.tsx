@@ -1,9 +1,9 @@
-import { FinishingUp } from "./UI"
+import { ThankYou } from "./UI"
 function App() {
 
   return (
     <>
-      <FinishingUp />
+      <ThankYou />
     </>
   )
 }
