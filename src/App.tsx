@@ -1,9 +1,9 @@
-import { AddOn } from "./UI"
+import { FinishingUp } from "./UI"
 function App() {
 
   return (
     <>
-      <AddOn />
+      <FinishingUp />
     </>
   )
 }
