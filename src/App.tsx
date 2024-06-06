@@ -1,9 +1,9 @@
-import { PlanSelection } from "./UI"
+import { AddOn } from "./UI"
 function App() {
 
   return (
     <>
-      <PlanSelection />
+      <AddOn />
     </>
   )
 }

@@ -21,3 +21,21 @@ export const plan = [
     trailDuration: "2 months free",
   },
 ];
+
+export const addOn = [
+  {
+    plan: "Online service",
+    description: "Access to multiplayer games",
+    price: "+$1/mo",
+  },
+  {
+    plan: "Larger storage",
+    description: "Extra 1TB of cloud save",
+    price: "+$2/mo",
+  },
+  {
+    plan: " Customizable Profile ",
+    description: "Custom theme on your profile",
+    price: "+$2/mo",
+  },
+];

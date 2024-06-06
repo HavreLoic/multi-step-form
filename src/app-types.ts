@@ -10,3 +10,9 @@ export type PlanCardType = {
   price: string;
   trailDuration?: string;
 };
+
+export type AddOnPlanType = {
+  plan: string;
+  description: string;
+  price: string;
+};
