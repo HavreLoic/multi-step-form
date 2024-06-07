@@ -21,4 +21,10 @@ export type SidebarItemType = {
   number: number;
   step: string;
   item: string;
+  link: string;
+};
+
+export type ErrorType = {
+  statusText?: string | number;
+  message?: string;
 };
