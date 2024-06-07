@@ -4,7 +4,7 @@ import { addOn } from "../data"
 
 export const AddOn = () => {
     return (
-        <>
+        <div>
             <CardHeader
                 title="Pick add-ons"
                 description="Add-ons help enhance your gaming experience."
@@ -17,6 +17,6 @@ export const AddOn = () => {
                     price={price}
                 />
             ))}
-        </>
+        </div>
     )
 }

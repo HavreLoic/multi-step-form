@@ -39,3 +39,26 @@ export const addOn = [
     price: "+$2/mo",
   },
 ];
+
+export const sideBarItems = [
+  {
+    number: 1,
+    step: "STEP 1",
+    item: "YOUR INFO",
+  },
+  {
+    number: 2,
+    step: "STEP 2",
+    item: "SELECT PLAN",
+  },
+  {
+    number: 3,
+    step: "STEP 3",
+    item: "ADD-ONS",
+  },
+  {
+    number: 4,
+    step: "STEP 4",
+    item: "SUMMARY",
+  },
+];

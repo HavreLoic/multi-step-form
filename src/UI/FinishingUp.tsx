@@ -2,7 +2,7 @@ import { CardHeader } from "../Components"
 
 export const FinishingUp = () => {
     return (
-        <>
+        <div>
             <CardHeader
                 title=" Finishing up"
                 description="Double-check everything looks OK before confirming."
@@ -33,6 +33,6 @@ export const FinishingUp = () => {
                 </div>
             </div>
 
-        </>
+        </div>
     )
 }

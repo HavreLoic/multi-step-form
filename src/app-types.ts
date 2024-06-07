@@ -16,3 +16,9 @@ export type AddOnPlanType = {
   description: string;
   price: string;
 };
+
+export type SidebarItemType = {
+  number: number;
+  step: string;
+  item: string;
+};

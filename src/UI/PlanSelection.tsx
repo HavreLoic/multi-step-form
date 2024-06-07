@@ -4,7 +4,7 @@ import { toggleCheckBoxStyle } from "../global"
 
 export const PlanSelection = () => {
     return (
-        <>
+        <div>
             <CardHeader
                 title="Select your plan"
                 description="You have the option of monthly or yearly billing."
@@ -31,6 +31,6 @@ export const PlanSelection = () => {
                 />
                 <p>Yearly</p>
             </div>
-        </>
+        </div>
     )
 }
