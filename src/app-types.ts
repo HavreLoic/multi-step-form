@@ -15,6 +15,7 @@ export type AddOnPlanType = {
   plan: string;
   description: string;
   price: string;
+  planRegistration?: string;
 };
 
 export type SidebarItemType = {

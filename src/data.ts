@@ -27,16 +27,19 @@ export const addOn = [
     plan: "Online service",
     description: "Access to multiplayer games",
     price: "+$1/mo",
+    planRegistration: "online-service",
   },
   {
     plan: "Larger storage",
     description: "Extra 1TB of cloud save",
     price: "+$2/mo",
+    planRegistration: "larger-storage",
   },
   {
-    plan: " Customizable Profile ",
+    plan: "Customizable Profile",
     description: "Custom theme on your profile",
     price: "+$2/mo",
+    planRegistration: "customizable-Profile",
   },
 ];
 

@@ -1,6 +1,15 @@
+import { Link } from "react-router-dom"
 import { CardHeader } from "../Components"
+import { useStepsStore } from "../Store";
 
 export const FinishingUp = () => {
+    const { setToNextStep, setCurrentPage } = useStepsStore();
+
+    const onClickChangeStep = () => {
+        setToNextStep(0);
+        setCurrentPage("/select-plan");
+    }
+
     return (
         <div>
             <CardHeader
@@ -13,7 +22,11 @@ export const FinishingUp = () => {
                 <div className="flex justify-between mb-3">
                     <div>
                         <p className="text-marine-blue font-semibold text-[1.125rem]">Arcade (Monthly)</p>
-                        <p className="text-cool-gray underline cursor-pointer">Change</p>
+                        <p className="text-cool-gray underline cursor-pointer">
+                            <Link to={"/select-plan"} onClick={onClickChangeStep}>
+                                Change
+                            </Link>
+                        </p>
                     </div>
                     <p className="text-marine-blue font-semibold text-[1.125rem]">$9/mo</p>
                 </div>

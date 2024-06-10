@@ -1,8 +1,11 @@
+import { useForm } from "react-hook-form";
 import { CardHeader, PlanCard } from "../Components"
 import { plan } from "../data"
 import { toggleCheckBoxStyle } from "../global"
 
 export const PlanSelection = () => {
+    const { register } = useForm();
+
     return (
         <div>
             <CardHeader
@@ -26,6 +29,7 @@ export const PlanSelection = () => {
                 <p>Monthly</p>
                 <input
                     className={`${toggleCheckBoxStyle} ml-8 mr-8`}
+                    {...register(`isChecked`)}
                     type="checkbox"
                     role="switch"
                 />
