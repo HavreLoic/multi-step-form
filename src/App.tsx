@@ -38,7 +38,7 @@ function App() {
 
 
   return (
-    <div className="grid grid-cols-[25%_75%] p-5 relative">
+    <div className="md:grid md:grid-cols-[25%_75%] md:p-5 xs:grid-cols-[1] relative">
       <Sidebar />
 
       <div className="pl-[6rem] pr-[15rem] pt-10 pb-5">

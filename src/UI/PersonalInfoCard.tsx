@@ -1,8 +1,21 @@
 import { useForm } from "react-hook-form";
 import { CardHeader, Input } from "../Components"
 
+type Inputs = {
+    name: string,
+    email: string,
+    phone: number,
+};
+
 export const PersonalInfoCard = () => {
-    const { register, watch, formState: { errors } } = useForm();
+    const { register, watch, formState: { errors } } = useForm<Inputs>();
+
+
+    // Watch List
+    watch("name");
+    watch("email");
+    watch("phone");
+
     return (
         <div>
             <CardHeader
