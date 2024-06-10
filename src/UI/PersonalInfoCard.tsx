@@ -7,9 +7,9 @@ export const PersonalInfoCard = () => {
                 title="Personal info"
                 description="Please provide your name, email address, and phone number."
             />
-            <Input type="text" placeholder="e.g. Stephen King" fieldLabel="Name" />
-            <Input type="email" placeholder="e.g. stephenking@lorem.com" fieldLabel="Email Address" />
-            <Input type="number" placeholder="e.g. +1 234 567 890" fieldLabel="Phone Number" />
+            <Input type="text" placeholder="e.g. Stephen King" fieldlabel="Name" />
+            <Input type="email" placeholder="e.g. stephenking@lorem.com" fieldlabel="Email Address" />
+            <Input type="number" placeholder="e.g. +1 234 567 890" fieldlabel="Phone Number" />
         </div>
     )
 }

@@ -1,28 +1,80 @@
 import { Button } from "./Components/Button"
 import {
   Sidebar,
-  PersonalInfoCard
 } from "./UI";
-import { Outlet } from "react-router-dom"
+import { useStepsStore } from "./Store";
+import { sideBarItems } from "./data";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function App() {
+  const { currentStep, currentPage, setToNextStep, setToPrevStep, setCurrentPage } = useStepsStore();
+  const navigate = useNavigate();
+  const [newSideBarItems, setNewSideBarItems] = useState(sideBarItems)
+  console.log("currentStep ", currentStep, "currentPage ", currentPage);
+
+  const onClickNextStep = () => {
+    setToNextStep(currentStep);
+    setCurrentPage(newSideBarItems[currentStep + 1].link);
+  }
+
+  const onClickPrevStep = () => {
+    setToPrevStep(currentStep);
+    setCurrentPage(newSideBarItems[currentStep - 1].link);
+  }
+
+  useEffect(() => {
+    setNewSideBarItems([
+      ...newSideBarItems,
+      {
+        number: 5,
+        step: "STEP 5",
+        item: "THANK YOU",
+        link: "/thank-you",
+      }
+    ])
+    navigate(currentPage)
+  }, [currentPage])
+
 
   return (
-    <div className="grid grid-cols-[25%_75%] p-5">
+    <div className="grid grid-cols-[25%_75%] p-5 relative">
       <Sidebar />
 
-      <Outlet />
-      {/* <div className="px-20 pt-10 pb-5">
-        <PersonalInfoCard />
+      <div className="pl-[6rem] pr-[15rem] pt-10 pb-5">
+        <Outlet />
 
-        <div className="flex justify-between mt-auto">
-          <p className="text-cool-gray cursor-pointer">Go Back</p>
-          <Button
-            bgColor="marine-blue"
-            text={`Continue`}
-          />
-        </div>
-      </div> */}
+        {currentStep <= 3 ?
+          <div className="flex justify-between">
+
+            {/* Previous Step Button GOOD*/}
+            {currentStep >= 1 && currentStep < 4 ?
+              (<div className="absolute bottom-0 pb-10 pl-[0.4rem]">
+                <p
+                  className="text-cool-gray cursor-pointer"
+                  onClick={onClickPrevStep}
+                >
+                  Go Back
+                </p>
+              </div>) :
+              (<div className="absolute bottom-0"></div>)
+            }
+
+            {/* Next Step Button*/}
+            <div className="absolute bottom-0 right-0 pr-[16rem] pb-10">
+              <Link to={currentPage}>
+                <Button
+                  onClick={onClickNextStep}
+                  bgcolor={currentStep <= 2 ? "marine-blue" : "purplish-blue"}
+                  text={currentStep <= 2 ? "Next Step" : "Confirm"}
+                />
+              </Link>
+            </div>
+          </div>
+          :
+          <></>
+        }
+      </div>
     </div>
   )
 }

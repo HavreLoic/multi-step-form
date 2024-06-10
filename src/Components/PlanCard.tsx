@@ -2,7 +2,7 @@ import { PlanCardType } from "../app-types"
 
 export const PlanCard = ({ image, alt, plan, price, trailDuration }: PlanCardType) => {
     return (
-        <div className="focus:shadow-md border-[2px] rounded-md p-[5px] border-light-gray cursor-pointer">
+        <div className="focus:shadow-md border-[2px] rounded-md p-[5px] border-light-gray cursor-pointer w-[33%]">
             <div className="p-5">
                 <img src={`${image}`} alt={alt} className="mb-5" />
                 <h1 className="text-marine-blue font-semibold text-[1.2rem] mb-1">{plan}</h1>

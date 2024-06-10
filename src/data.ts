@@ -1,5 +1,3 @@
-import { PersonalInfoCard, AddOn, FinishingUp, PlanSelection } from "./UI";
-
 export const plan = [
   {
     image: "assets/icon-arcade.svg",
@@ -48,27 +46,23 @@ export const sideBarItems = [
     step: "STEP 1",
     item: "YOUR INFO",
     link: "/your-info",
-    page: PersonalInfoCard,
   },
   {
     number: 2,
     step: "STEP 2",
     item: "SELECT PLAN",
     link: "/select-plan",
-    page: PlanSelection,
   },
   {
     number: 3,
     step: "STEP 3",
     item: "ADD-ONS",
     link: "/add-ons",
-    page: AddOn,
   },
   {
     number: 4,
     step: "STEP 4",
     item: "SUMMARY",
     link: "/summary",
-    page: FinishingUp,
   },
 ];

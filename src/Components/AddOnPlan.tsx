@@ -2,7 +2,7 @@ import { AddOnPlanType } from "../app-types"
 
 export const AddOnPlan = ({ plan, description, price }: AddOnPlanType) => {
     return (
-        <div className="p-5 grid grid-cols-3 items-center border-[1.99px] border-purplish-blue rounded-[5px] mb-5">
+        <div className="p-5 grid grid-cols-[1fr_2fr_1fr] items-center border-[1.99px] border-purplish-blue rounded-[5px] mb-5">
             <div className="flex items-center mb-4  rounded-[5px]">
                 <input
                     type="checkbox"
@@ -15,7 +15,7 @@ export const AddOnPlan = ({ plan, description, price }: AddOnPlanType) => {
                 <p className="text-cool-gray">{description}</p>
             </div>
 
-            <div className="text-purplish-blue text-[1.18rem]">
+            <div className="text-purplish-blue text-[1.18rem] text-end">
                 {price}
             </div>
         </div>
