@@ -38,18 +38,18 @@ function App() {
 
 
   return (
-    <div className="md:grid md:grid-cols-[25%_75%] md:p-5 xs:grid-cols-[1] relative">
+    <div className="md:grid md:grid-cols-[25%_75%] md:p-5 xs:grid-cols-[1]">
       <Sidebar />
 
-      <div className="pl-[6rem] pr-[15rem] pt-10 pb-5">
+      <div className="md:pl-[6rem] md:pr-[15rem] md:pt-10 md:pb-5 xs:px-[3rem] xs:pt-5 xs:pb-2.5">
         <Outlet />
 
         {currentStep <= 3 ?
-          <div className="flex justify-between">
+          <div className="flex justify-between relative h-[5rem]">
 
             {/* Previous Step Button GOOD*/}
             {currentStep >= 1 && currentStep < 4 ?
-              (<div className="absolute bottom-0 pb-10 pl-[0.4rem]">
+              (<div className="xs:pb-2.5 xs:pl-0 md:pb-10 md:pl-[0.4rem] absolute top-[5rem]">
                 <p
                   className="text-cool-gray cursor-pointer"
                   onClick={onClickPrevStep}
@@ -57,11 +57,11 @@ function App() {
                   Go Back
                 </p>
               </div>) :
-              (<div className="absolute bottom-0"></div>)
+              (<div className="absolute top-[5rem]"></div>)
             }
 
             {/* Next Step Button*/}
-            <div className="absolute bottom-0 right-0 pr-[16rem] pb-10">
+            <div className="xs:pb-2.5 xs:pr-12 md:pb-10 md:pr-[0.4rem] absolute top-[5rem] right-0">
               <Link to={currentPage}>
                 <Button
                   onClick={onClickNextStep}
