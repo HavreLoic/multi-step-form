@@ -2,26 +2,29 @@ import { Button } from "./Components/Button"
 import {
   Sidebar,
 } from "./UI";
-import { useStepsStore } from "./Store";
-import { sideBarItems } from "./data";
+// import { useStepsStore } from "./Store";
+// import { sideBarItems } from "./data";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useSideBarLogic } from "./Hooks";
 
 function App() {
-  const { currentStep, currentPage, setToNextStep, setToPrevStep, setCurrentPage } = useStepsStore();
-  const navigate = useNavigate();
-  const [newSideBarItems, setNewSideBarItems] = useState(sideBarItems)
+  // const { currentStep, currentPage, setToNextStep, setToPrevStep, setCurrentPage } = useStepsStore();
+  // const navigate = useNavigate();
+  // const [newSideBarItems, setNewSideBarItems] = useState(sideBarItems)
+  const { currentPage, currentStep, newSideBarItems, onClickNextStep, onClickPrevStep, setNewSideBarItems, navigate } = useSideBarLogic();
+
   console.log("currentStep ", currentStep, "currentPage ", currentPage);
 
-  const onClickNextStep = () => {
-    setToNextStep(currentStep);
-    setCurrentPage(newSideBarItems[currentStep + 1].link);
-  }
+  // const onClickNextStep = () => {
+  //   setToNextStep(currentStep);
+  //   setCurrentPage(newSideBarItems[currentStep + 1].link);
+  // }
 
-  const onClickPrevStep = () => {
-    setToPrevStep(currentStep);
-    setCurrentPage(newSideBarItems[currentStep - 1].link);
-  }
+  // const onClickPrevStep = () => {
+  //   setToPrevStep(currentStep);
+  //   setCurrentPage(newSideBarItems[currentStep - 1].link);
+  // }
 
   useEffect(() => {
     setNewSideBarItems([
