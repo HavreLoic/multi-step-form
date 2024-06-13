@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
-import { CardHeader, Input } from "../Components"
+import { CardHeader, Input, StepsButtons } from "../Components"
 import { usePersonalInfoStore } from "../Store";
-import { useStepsFormSubmissionStore } from "../Store/StepsFormSubmissionStore";
+import { useFormNextStep } from "../Hooks";
 
 export type Inputs = {
     name: string,
@@ -11,8 +11,8 @@ export type Inputs = {
 
 export const PersonalInfoCard = () => {
     const { handleSubmit, register, formState: { errors } } = useForm<Inputs>();
-    const { setName, setEmail, setPhone } = usePersonalInfoStore()
-    const { setOnSubmitPersonalInfo } = useStepsFormSubmissionStore();
+    const { name, email, phone, setName, setEmail, setPhone } = usePersonalInfoStore()
+    const { onClickNextStep } = useFormNextStep();
 
     const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value);
@@ -25,9 +25,10 @@ export const PersonalInfoCard = () => {
     const onChangePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPhone(e.target.value);
     }
-    // const onSubmit = (data: Inputs) => console.log(data);
+
     const onSubmit = (data: Inputs) => {
-        setOnSubmitPersonalInfo(data);
+        console.log(data);
+        onClickNextStep();
     }
     return (
         <>
@@ -44,6 +45,7 @@ export const PersonalInfoCard = () => {
                     type="text"
                     placeholder="e.g. Stephen King"
                     fieldlabel="Name"
+                    defaultValue={name}
                     {...register("name", {
                         required: "Please enter your name.",
                         minLength: {
@@ -59,6 +61,7 @@ export const PersonalInfoCard = () => {
                     type="email"
                     placeholder="e.g. stephenking@lorem.com"
                     fieldlabel="Email Address"
+                    defaultValue={email}
                     {...register("email", {
                         required: "Please enter your email address.",
                     })}
@@ -69,6 +72,7 @@ export const PersonalInfoCard = () => {
                     type="number"
                     placeholder="e.g. +1 234 567 890"
                     fieldlabel="Phone Number"
+                    defaultValue={phone}
                     {...register("phone", {
                         required: "Please enter your phone number.",
                         minLength: {
@@ -78,6 +82,8 @@ export const PersonalInfoCard = () => {
                     })}
                     onChange={onChangePhone}
                 />
+
+                <StepsButtons />
             </form>
         </>
     )

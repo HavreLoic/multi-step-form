@@ -24,7 +24,23 @@ export type SidebarItemType = {
   item: string;
 };
 
+export type NewSidebarItemType = SidebarItemType & {
+  link: string;
+};
+
 export type ErrorType = {
   statusText?: string | number;
   message?: string;
+};
+
+export type FormNextButtonType = {
+  currentStep: number;
+  currentPage: string;
+  onClickNextStep: () => void;
+};
+
+export type Inputs = {
+  name: string;
+  email: string;
+  phone: number;
 };

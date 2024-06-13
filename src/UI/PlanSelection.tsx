@@ -1,10 +1,27 @@
 import { useForm } from "react-hook-form";
-import { CardHeader, PlanCard } from "../Components"
+import { CardHeader, PlanCard, StepsButtons } from "../Components"
 import { plan } from "../data"
 import { toggleCheckBoxStyle } from "../global"
+import { useFormNextStep } from "../Hooks";
+
+interface PlanSelectionForm {
+    isChecked: boolean
+}
 
 export const PlanSelection = () => {
-    const { register } = useForm();
+    const { handleSubmit, register } = useForm<PlanSelectionForm>();
+    const { onClickNextStep } = useFormNextStep();
+
+    const onSwitchCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(e.target.checked);
+        console.log("after on");
+
+    }
+
+    const onSubmit = (data: PlanSelectionForm) => {
+        console.log(data);
+        onClickNextStep();
+    }
 
     return (
         <div>
@@ -27,14 +44,19 @@ export const PlanSelection = () => {
 
             <div className="p-5 text-marine-blue flex justify-center text-center bg-magnolia font-medium rounded-[5px]">
                 <p>Monthly</p>
-                <input
-                    className={`${toggleCheckBoxStyle} ml-8 mr-8`}
-                    {...register(`isChecked`)}
-                    type="checkbox"
-                    role="switch"
-                />
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input
+                        className={`${toggleCheckBoxStyle} ml-8 mr-8`}
+                        {...register(`isChecked`)}
+                        type="checkbox"
+                        role="switch"
+                        onChange={onSwitchCheckbox}
+                    />
+                </form>
                 <p>Yearly</p>
             </div>
+
+            <StepsButtons />
         </div>
     )
 }
