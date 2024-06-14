@@ -3,19 +3,19 @@ import { CardHeader, PlanCard, StepsButtons } from "../Components"
 import { plan } from "../data"
 import { toggleCheckBoxStyle } from "../global"
 import { useFormNextStep } from "../Hooks";
+import { useSelectPlanStore } from "../Store";
 
 interface PlanSelectionForm {
-    isChecked: boolean
+    isChecked: boolean;
 }
 
 export const PlanSelection = () => {
     const { handleSubmit, register } = useForm<PlanSelectionForm>();
     const { onClickNextStep } = useFormNextStep();
+    const { isChecked, setIsChecked } = useSelectPlanStore();
 
     const onSwitchCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.checked);
-        console.log("after on");
-
+        setIsChecked(e.target.checked);
     }
 
     const onSubmit = (data: PlanSelectionForm) => {
@@ -42,21 +42,23 @@ export const PlanSelection = () => {
                 ))}
             </div>
 
-            <div className="p-5 text-marine-blue flex justify-center text-center bg-magnolia font-medium rounded-[5px]">
-                <p>Monthly</p>
-                <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="p-5 text-marine-blue flex justify-center text-center bg-magnolia font-medium rounded-[5px]">
+                    <p>Monthly</p>
                     <input
                         className={`${toggleCheckBoxStyle} ml-8 mr-8`}
                         {...register(`isChecked`)}
+                        checked={isChecked}
                         type="checkbox"
                         role="switch"
                         onChange={onSwitchCheckbox}
                     />
-                </form>
-                <p>Yearly</p>
-            </div>
+                    <p>Yearly</p>
+                </div>
 
-            <StepsButtons />
+                <StepsButtons />
+
+            </form>
         </div>
     )
 }

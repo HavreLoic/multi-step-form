@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { CardHeader } from "../Components"
+import { CardHeader, StepsButtons } from "../Components"
 import { useStepsStore } from "../Store";
 
 export const FinishingUp = () => {
@@ -45,7 +45,7 @@ export const FinishingUp = () => {
                     <p className="text-[1.2rem] text-purplish-blue">$12/mo</p>
                 </div>
             </div>
-
+            <StepsButtons />
         </div>
     )
 }

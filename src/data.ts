@@ -39,7 +39,7 @@ export const addOn = [
     plan: "Customizable Profile",
     description: "Custom theme on your profile",
     price: "+$2/mo",
-    planRegistration: "customizable-Profile",
+    planRegistration: "customizable-profile",
   },
 ];
 
