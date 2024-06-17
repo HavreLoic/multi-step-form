@@ -3,36 +3,36 @@ import { create } from "zustand";
 type AddOnStoreType = {
   onlineService: string;
   onlineServiceIsChecked: boolean;
-  onlineServicePrice: string;
+  onlineServicePrice: number;
   largerStorage: string;
   largerStorageIsChecked: boolean;
-  largerStoragePrice: string;
+  largerStoragePrice: number;
   customizableProfile: string;
   customizableProfileIsChecked: boolean;
-  customizableProfilePrice: string;
+  customizableProfilePrice: number;
   setOnlineService: (onlineService: string) => void;
   setOnlineServiceIsChecked: (onlineServiceIsChecked: boolean) => void;
-  setOnlineServicePrice: (onlineServicePrice: string) => void;
+  setOnlineServicePrice: (onlineServicePrice: number) => void;
   setLargerStorage: (largerStorage: string) => void;
   setLargerStorageIsChecked: (largerStorageIsChecked: boolean) => void;
-  setLargerStoragePrice: (largerStoragePrice: string) => void;
+  setLargerStoragePrice: (largerStoragePrice: number) => void;
   setCustomizableProfile: (customizableProfile: string) => void;
   setCustomizableProfileIsChecked: (
     customizableProfileIsChecked: boolean
   ) => void;
-  setCustomizableProfilePrice: (customizableProfilePrice: string) => void;
+  setCustomizableProfilePrice: (customizableProfilePrice: number) => void;
 };
 
 export const useAddOnStore = create<AddOnStoreType>()((set) => ({
   onlineService: "",
   onlineServiceIsChecked: false,
-  onlineServicePrice: "",
+  onlineServicePrice: 0,
   largerStorage: "",
   largerStorageIsChecked: false,
-  largerStoragePrice: "",
+  largerStoragePrice: 0,
   customizableProfile: "",
   customizableProfileIsChecked: false,
-  customizableProfilePrice: "",
+  customizableProfilePrice: 0,
   setOnlineService: (onlineService) => set(() => ({ onlineService })),
   setOnlineServicePrice: (onlineServicePrice) =>
     set(() => ({ onlineServicePrice })),

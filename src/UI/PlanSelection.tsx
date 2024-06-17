@@ -29,6 +29,7 @@ export const PlanSelection = () => {
                 title="Select your plan"
                 description="You have the option of monthly or yearly billing."
             />
+
             <div className="flex gap-5 mb-10">
                 {plan.map(({ alt, image, plan, price, trailDuration }, index: number) => (
                     <PlanCard

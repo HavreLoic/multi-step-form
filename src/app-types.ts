@@ -7,15 +7,15 @@ export type PlanCardType = {
   image: string;
   alt: string;
   plan: string;
-  price: string;
+  price: number;
   trailDuration?: string;
 };
 
 export type AddOnPlanType = {
   plan: string;
   description: string;
-  price: string;
-  planRegistration?: string;
+  price: number;
+  planRegistration?: "onlineService" | "largerStorage" | "customizableProfile";
 };
 
 export type SidebarItemType = {
@@ -43,4 +43,9 @@ export type Inputs = {
   name: string;
   email: string;
   phone: number;
+};
+
+export type SelectedAddonsType = {
+  name: string;
+  price: number;
 };

@@ -1,3 +1,4 @@
+import { useSelectPlanStore } from "../Store";
 import { AddOnPlanType } from "../app-types"
 
 type AddOnPlanPropsType = AddOnPlanType & {
@@ -5,6 +6,7 @@ type AddOnPlanPropsType = AddOnPlanType & {
 }
 
 export const AddOnPlan = ({ plan, description, price, children }: AddOnPlanPropsType) => {
+    const { isChecked } = useSelectPlanStore();
 
     return (
         <div className="p-5 grid grid-cols-[1fr_2fr_1fr] items-center border-[1.99px] border-purplish-blue rounded-[5px] mb-5">
@@ -18,7 +20,7 @@ export const AddOnPlan = ({ plan, description, price, children }: AddOnPlanProps
             </div>
 
             <div className="text-purplish-blue text-[1.18rem] text-end">
-                {price}
+                +${price}{isChecked && 0}/{isChecked ? "yr" : "mo"}
             </div>
 
         </div>
