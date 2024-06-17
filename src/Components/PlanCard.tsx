@@ -12,7 +12,7 @@ export const PlanCard = ({ image, alt, plan, price, trailDuration }: PlanCardTyp
 
     return (
         <div
-            className="focus:shadow-md border-[2px] rounded-md p-[5px] border-light-gray cursor-pointer w-[33%]"
+            className={`focus:shadow-md border-[2px] rounded-md p-[5px] border-light-gray cursor-pointer w-[33%]`}
             onClick={() => onSelectCard({ image, alt, plan, price, trailDuration })}
         >
             <div className="p-5">

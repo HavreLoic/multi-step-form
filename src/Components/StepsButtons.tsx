@@ -26,7 +26,7 @@ export const StepsButtons = () => {
                     {/* Next Step Button*/}
                     <div>
                         <Button
-                            bgcolor={currentStep <= 2 ? "marine-blue" : "purplish-blue"}
+                            className={`${currentStep <= 2 ? "bg-marine-blue" : "bg-purplish-blue"} p-2 rounded-md text-white font-semibold`}
                             text={currentStep <= 2 ? "Next Step" : "Confirm"}
                         />
                     </div>

@@ -39,7 +39,7 @@ export const PersonalInfoCard = () => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 {errors.name && (
-                    <p className="text-red-500 text-xs italic text-end">{errors.name.message}</p>
+                    <p className="text-red-500 text-end">{errors.name.message}</p>
                 )}
                 <Input
                     type="text"
@@ -57,6 +57,9 @@ export const PersonalInfoCard = () => {
                     aria-invalid={errors.name ? "true" : "false"}
                 />
 
+                {errors.email && (
+                    <p className="text-red-500 text-end">{errors.email.message}</p>
+                )}
                 <Input
                     type="email"
                     placeholder="e.g. stephenking@lorem.com"
@@ -68,6 +71,9 @@ export const PersonalInfoCard = () => {
                     onChange={onChangeEmail}
                 />
 
+                {errors.phone && (
+                    <p className="text-red-500 text-end">{errors.phone.message}</p>
+                )}
                 <Input
                     type="number"
                     placeholder="e.g. +1 234 567 890"

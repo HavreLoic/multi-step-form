@@ -44,7 +44,7 @@ export const PlanSelection = () => {
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="p-5 text-marine-blue flex justify-center text-center bg-magnolia font-medium rounded-[5px]">
+                <div className="p-5 text-marine-blue flex justify-center text-center bg-magnolia font-medium rounded-[5px] mb-10">
                     <p>Monthly</p>
                     <input
                         className={`${toggleCheckBoxStyle} ml-8 mr-8`}
